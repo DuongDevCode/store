@@ -2,8 +2,8 @@ import MainPage from "./main";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Login",
-  description: "Login app",
+  title: "Home",
+  description: "Home app",
 };
 function PageLogin() {
   return <MainPage />
