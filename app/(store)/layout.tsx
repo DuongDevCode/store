@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-// import { Provider } from "react-redux";
-// import store from "./src/store";
+import "../globals.css";
+import LayoutPage from "../components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,14 +12,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    // <Provider store={store}>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    // </Provider>
+    <html lang="en">
+      <body className={`${inter.className} h-screen`}>
+        <LayoutPage>
+          {children}
+        </LayoutPage>
+      </body>
+    </html>
   );
 }
